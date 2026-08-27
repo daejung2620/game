@@ -106,5 +106,19 @@ namespace TEST
             }
         }
 
+        public static void contorl()
+        {
+            int i = 0;
+            for (i = 0; i < 10; i++)
+            {
+                if (i == 8)
+                    break;
+                if (i == 3)
+                    continue;
+                
+                Console.WriteLine(i);
+            }
+        }
+
     }
 }
