@@ -1,0 +1,43 @@
+using System;
+
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        class BaseClass()
+        {
+            public int m_x;
+            public void showData()
+            {
+                Console.WriteLine("부모 객체함수" + m_x);
+            }
+        }
+        class SubClass : BaseClass
+        {
+            public new int m_x;
+            public int m_y;
+            public new void showData()
+            {
+                m_x = 77;
+                Console.WriteLine("자식 객체함수" + m_x);
+                Console.WriteLine("자식 객체함수" + m_y);
+            }
+            public void Show()
+            {
+                showData();
+                base.m_x = 123;
+                base.showData();
+            }
+        }
+        static void Main(string[] args)
+        {
+            BaseClass pbase = new BaseClass();
+            pbase.showData();
+
+            SubClass psub = new SubClass();
+            psub.showData();
+            psub.Show();
+        }
+    }
+}
