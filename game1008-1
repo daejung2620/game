@@ -1,0 +1,31 @@
+using System;
+
+namespace gameproject1
+{
+    internal class Program
+    {
+        public class HowardTech
+        {
+            public virtual void MakeReactor()
+            {
+                Console.WriteLine("일반기술");
+            }
+        }
+        public class TonyTech : HowardTech
+        {
+            public override void MakeReactor()
+            {
+                Console.WriteLine("고급기술");
+            }
+        }
+
+        static void Main(string[] args)
+        {
+            HowardTech factory = new HowardTech();
+            factory.MakeReactor();
+            Console.WriteLine("----------------");
+            TonyTech ironMan = new TonyTech();
+            ironMan.MakeReactor();
+        }
+    }
+}
